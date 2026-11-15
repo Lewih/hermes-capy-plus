@@ -610,7 +610,7 @@ def yawn():
 
 # --------------------------------------------------------- waiting / run
 def sign():
-    """Waiting for the user: holds up a bold "?" sign (reads at 0.45x)."""
+    """Waiting for the user: a bold "?" sign stuck in its box (reads at 0.45x)."""
     frames = []
     for i in range(6):
         t = i / 6
@@ -623,7 +623,6 @@ def sign():
             f = _font(int(52 * s))
             l, tp, r, b = d.textbbox((0, 0), "?", font=f, stroke_width=int(2 * s))
             d.text((50 * s - (l + r) / 2, (56 - lift) * s - (tp + b) / 2), "?", font=f, fill=(222, 56, 48, 255), stroke_width=int(2 * s), stroke_fill=(222, 56, 48, 255))
-            d.ellipse([40 * s, (122 - lift / 2) * s, 56 * s, (134 - lift / 2) * s], fill=SKIN, outline=INK, width=int(2.2 * s))  # paw
         frames.append((None, idle_base(i), aa(board).rotate(4 * math.sin(2 * math.pi * t), resample=Image.BICUBIC, center=(48, 134))))
     return frames
 
