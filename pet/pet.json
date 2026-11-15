@@ -1,0 +1,173 @@
+{
+  "id": "capy-plus",
+  "displayName": "Capy Plus",
+  "description": "A calm capybara with a hat for every mood (top hat, party hat, umbrella, graduation cap, cowboy hat, hard hat, propeller beanie) swapped in a puff of smoke. Munches grass and hosts a little bird while idle, codes on a tiny laptop, holds up a sign when it needs you, and dozes in a hot-spring tub with a yuzu on its head (and glares if you poke it awake). Squeaks when poked, dangles when picked up, flails as it falls and lands seeing stars.",
+  "spriteVersionNumber": 2,
+  "spritesheetPath": "spritesheet.webp",
+  "stateRows": [
+    "idle",
+    "running-right",
+    "running-left",
+    "waving",
+    "jumping",
+    "failed",
+    "waiting",
+    "running",
+    "review",
+    "smiling",
+    "crying",
+    "thinking",
+    "dancing",
+    "tinkering",
+    "juggling",
+    "munching",
+    "bird",
+    "onsen",
+    "sign",
+    "laptop",
+    "top-hat",
+    "party-hat",
+    "umbrella-hat",
+    "mortarboard-hat",
+    "hard-hat",
+    "cowboy-hat",
+    "propeller-hat",
+    "bird-in",
+    "yawn",
+    "poked",
+    "held",
+    "falling",
+    "landing",
+    "waking"
+  ],
+  "behaviors": {
+    "idle": {
+      "rows": [
+        "idle",
+        "munching",
+        "bird"
+      ]
+    },
+    "failed": {
+      "row": "crying"
+    },
+    "wave": {
+      "row": "smiling"
+    },
+    "jump": {
+      "row": "smiling"
+    },
+    "review": {
+      "rows": [
+        "tinkering",
+        "dancing",
+        "juggling",
+        "thinking",
+        "laptop"
+      ]
+    },
+    "waiting": {
+      "row": "sign"
+    },
+    "run": {
+      "rows": [
+        "tinkering",
+        "dancing",
+        "juggling",
+        "thinking",
+        "laptop"
+      ]
+    },
+    "sleep": {
+      "row": "onsen",
+      "afterSeconds": 300
+    },
+    "poke": {
+      "row": "poked"
+    },
+    "held": {
+      "row": "held"
+    },
+    "fall": {
+      "row": "falling"
+    },
+    "land": {
+      "row": "landing"
+    },
+    "wake": {
+      "row": "waking"
+    }
+  },
+  "costumes": {
+    "top": {
+      "rows": [
+        "idle",
+        "running-right",
+        "running-left",
+        "waving",
+        "jumping",
+        "failed",
+        "waiting",
+        "running",
+        "review",
+        "munching",
+        "sign",
+        "laptop",
+        "poked",
+        "held",
+        "falling",
+        "landing"
+      ],
+      "intro": "top-hat"
+    },
+    "bird": {
+      "rows": [
+        "bird"
+      ],
+      "intro": "bird-in"
+    },
+    "yuzu": {
+      "rows": [
+        "onsen",
+        "waking"
+      ],
+      "intro": "yawn"
+    },
+    "party": {
+      "rows": [
+        "smiling"
+      ],
+      "intro": "party-hat"
+    },
+    "umbrella": {
+      "rows": [
+        "crying"
+      ],
+      "intro": "umbrella-hat"
+    },
+    "mortarboard": {
+      "rows": [
+        "thinking"
+      ],
+      "intro": "mortarboard-hat"
+    },
+    "cowboy": {
+      "rows": [
+        "dancing"
+      ],
+      "intro": "cowboy-hat"
+    },
+    "hard": {
+      "rows": [
+        "tinkering"
+      ],
+      "intro": "hard-hat"
+    },
+    "propeller": {
+      "rows": [
+        "juggling"
+      ],
+      "intro": "propeller-hat"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+Artwork licence: CC BY-SA 4.0
+
+The artwork in this repository is licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International licence:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Covered files:
+  pet/*.webp                 sprite sheets
+  tools/source/*             source sprite sheet
+  assets/*.gif, docs/*.gif   previews
+
+Attribution:
+  Based on "Cache Capy" by railly (Railly Hugo, https://github.com/Railly),
+  from the petdex gallery (https://petdex.dev,
+  https://github.com/crafter-station/petdex).
+  Modified by Michele Pugno (hats, seasonal variants, run dust, extra
+  animation rows).
+
+The code is licensed separately under the MIT licence; see LICENSE.

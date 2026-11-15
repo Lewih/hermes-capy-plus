@@ -1,0 +1,8 @@
+name: capy-plus
+version: 0.1.0
+description: "Capy Plus — a capybara pet for Hermes that runs with dust, sleeps, smiles and cries. Installs the pet and adds speech-bubble reactions."
+author: Michele Pugno (Lewih)
+license: MIT
+homepage: https://github.com/Lewih/hermes-capy-plus
+provides_tools: []
+provides_hooks: []
