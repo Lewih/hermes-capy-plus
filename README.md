@@ -26,9 +26,9 @@ Features fall in three groups:
 
 - **Current Hermes**: works today with a stock install.
 - **Hermes + [PR #155675](https://github.com/NousResearch/hermes-agent/pull/155675)**: per-pet rows and behaviors in `pet.json`, sleep, wake and pointer handling. The PR is proposed upstream and not merged yet; until then, stock Hermes ignores these fields and nothing breaks.
-- **Costumes (hat swaps)**: need a further core change that is **not in Hermes upstream** and not part of that PR. Without it, the mood hats still appear (with PR #155675), they just change without the smoke-puff intro.
+- **Hat swaps**: every mood row has its hat drawn in, so the right hat always shows. The little smoke-puff intro when it changes hat is extra: it uses `costumes`, which I'll propose for Hermes as a follow-up to that PR. Until then the hat just changes instantly.
 
-| | Current Hermes | + PR #155675 | + costume core patch (not upstream) |
+| | Current Hermes | + PR #155675 | + `costumes` (planned follow-up) |
 |---|---|---|---|
 | Run animations with dust + speed streaks | ✅ | ✅ | ✅ |
 | A hat on every frame (top hat by default) | ✅ | ✅ | ✅ |
@@ -40,10 +40,10 @@ Features fall in three groups:
 | **Munches grass / bird visits while idle; thinks / dances / tinkers / juggles / codes while working; runs only when roaming** | — (runs in place, like stock pets) | ✅ | ✅ |
 | **Hot-spring nap** (`sleep`) and **poked awake** (`wake`) | — | ✅ | ✅ |
 | **Handling**: poked, held, falling, landing ([Interactions](#interactions)) | — | ✅ desktop | ✅ desktop |
-| **A hat per mood, swapped in a puff of smoke**: party hat (happy), umbrella (crying), graduation cap (thinking), cowboy hat (dancing), hard hat (tinkering), propeller beanie (juggling), the bird landing on the top hat, a yawn before the hot spring | — | partly: mood hats show, but switch without the smoke intro | ✅ desktop |
+| **A hat per mood, swapped in a puff of smoke**: party hat (happy), umbrella (crying), graduation cap (thinking), cowboy hat (dancing), hard hat (tinkering), propeller beanie (juggling), the bird landing on the top hat, a yawn before the hot spring | — | hats show, they switch without the puff | ✅ desktop |
 
-The sheet has 34 rows: the 9 standard petdex/Codex rows, then `smiling`, `crying`, `thinking`, `dancing`, `tinkering`, `juggling`, `munching`, `bird`, `onsen`, `sign`, `laptop`, then 9 one-shot costume intros (used only with the costume core patch): 7 hat swaps (`top-hat` … `propeller-hat`), `bird-in` (the bird flies in and lands) and `yawn` (a big yawn, then a poof reveals the tub), then the 4 pointer rows `poked`, `held`, `falling`, `landing`, then `waking` (see [Interactions](#interactions)).
-`costumes` groups rows by hat; with the costume core patch, when the hat changes the desktop plays the new hat's intro once. Hosts without it ignore `costumes`.
+The sheet has 34 rows: the 9 standard petdex/Codex rows, then `smiling`, `crying`, `thinking`, `dancing`, `tinkering`, `juggling`, `munching`, `bird`, `onsen`, `sign`, `laptop`, then 9 one-shot costume intros (used by `costumes`): 7 hat swaps (`top-hat` … `propeller-hat`), `bird-in` (the bird flies in and lands) and `yawn` (a big yawn, then a poof reveals the tub), then the 4 pointer rows `poked`, `held`, `falling`, `landing`, then `waking` (see [Interactions](#interactions)).
+`costumes` groups rows by hat; when the hat changes, the new hat's intro plays once. Hermes doesn't support it yet (planned follow-up) and simply ignores the field.
 `pet.json` names every row in `stateRows` and points Hermes pet states at rows in `behaviors`:
 
 ```json
@@ -63,7 +63,7 @@ The sheet has 34 rows: the 9 standard petdex/Codex rows, then `smiling`, `crying
 Keys are Hermes pet states (`idle`, `wave`, `run`, `failed`, `review`, `jump`, `waiting`, the opt-in `sleep`, and the desktop pointer states `poke`, `held`, `fall`, `land`, `wake`).
 A behavior whose row the sheet lacks is ignored. Stock Hermes ignores both fields and reads the first 9 rows.
 
-Support for `stateRows` and `behaviors` is proposed upstream as a generic feature in [NousResearch/hermes-agent#155675](https://github.com/NousResearch/hermes-agent/pull/155675). If you run Hermes from a source checkout, you can try it by checking out that PR and rebuilding the desktop app. `costumes` is not part of it.
+Support for `stateRows` and `behaviors` is proposed upstream as a generic feature in [NousResearch/hermes-agent#155675](https://github.com/NousResearch/hermes-agent/pull/155675). If you run Hermes from a source checkout, you can try it by checking out that PR and rebuilding the desktop app. `costumes` will be a separate follow-up.
 
 ## Interactions
 
